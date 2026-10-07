@@ -1,0 +1,36 @@
+<section class="ride-selection-container"  style="border: 2px orange solid;">
+
+  <h2>Select Your Ride</h2>
+
+  <div class="ride-grid"  style="border: 2px rgb(75, 51, 210) solid" >
+
+    @for (ride of rideOptions; track ride.type) {
+
+      <app-ride-option-card
+
+        [rideType]="ride.type"
+
+        [fare]="ride.fare"
+
+        [image]="ride.image"
+
+        (rideSelected)="selectRide($event)"
+
+      />
+
+    }
+
+  </div>
+
+  @if(userSelectedRide) {
+
+    <h3 class="selected-ride">
+
+      Selected Ride:
+      {{ userSelectedRide }}
+
+    </h3>
+
+  }
+
+</section>

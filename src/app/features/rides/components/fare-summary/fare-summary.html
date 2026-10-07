@@ -1,0 +1,53 @@
+<section class="fare-container">
+
+  <h2>Fare Summary</h2>
+
+  <div class="fare-card">
+
+    <p>
+      Customer:
+      {{ customerName | titlecase }}
+    </p>
+
+    <p>
+      Total Fare:
+      {{ totalFare | currency:'EUR' }}
+    </p>
+
+    <p>
+      Ride Date:
+      {{ rideDate | date:'fullDate' }}
+    </p>
+
+    <p>
+      Ride Time:
+      {{ rideDate | date:'shortTime' }}
+    </p>
+
+    <p>
+      Ride Status:
+      {{ rideStatus | uppercase }}
+    </p>
+<!--custom pipe-->
+    <p>
+  Surge Category:
+  {{ totalFare | surgeLevel }}
+</p>
+
+<!-- async pipe-->
+ <p>
+  Live Fare:
+  {{ liveFare$ | async }}
+</p>
+  </div>
+
+</section>
+
+<!--Task-->
+<!--
+Create a generpipe
+it should accept the username and gender
+return Male, Mr.Name
+       Female, Ms. Name
+       not passing gender- Name
+-->

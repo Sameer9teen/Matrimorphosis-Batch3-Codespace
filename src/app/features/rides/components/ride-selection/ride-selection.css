@@ -1,0 +1,31 @@
+.ride-selection-container {
+
+  padding: 50px;
+}
+
+.ride-selection-container h2 {
+
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.ride-grid {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.selected-ride {
+
+  text-align: center;
+
+  margin-top: 40px;
+
+  color: #2563eb;
+}

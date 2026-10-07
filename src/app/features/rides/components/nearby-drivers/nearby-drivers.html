@@ -1,0 +1,133 @@
+<section class="drivers-container">
+
+  <h2>Nearby Drivers</h2>
+
+  <div class="category-buttons">
+
+    <button (click)="selectedCategory = 'Bike'">
+      Bike
+    </button>
+
+    <button (click)="selectedCategory = 'Auto'">
+      Auto
+    </button>
+
+    <button (click)="selectedCategory = 'Cab'">
+      Cab
+    </button>
+
+  </div>
+
+  @switch (selectedCategory) {
+
+    @case ('Bike') {
+
+      <div class="drivers-grid" >
+
+        @for (driver of bikeDrivers; track driver.id) {
+
+          <div class="driver-card" appSuregeHighlight >
+
+            <h3>{{ driver.name }}</h3>
+
+            <p>Bike Driver</p>
+
+            <p>Rating: {{ driver.rating }}</p>
+
+            @if(driver.isOnline) {
+
+              <p class="online">
+                Driver Online
+              </p>
+
+            } @else {
+
+              <p class="offline">
+                Driver Offline
+              </p>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+    @case ('Auto') {
+
+      <div class="drivers-grid" appSuregeHighlight>
+
+        @for (driver of autoDrivers; track driver.id) {
+
+          <div class="driver-card" appSurgeHighlight>
+
+            <h3>{{ driver.name }}</h3>
+
+            <p>Auto Driver</p>
+
+            <p>Rating: {{ driver.rating }}</p>
+
+            @if(driver.isOnline) {
+
+              <p class="online">
+                Driver Online
+              </p>
+
+            } @else {
+
+              <p class="offline">
+                Driver Offline
+              </p>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+    @case ('Cab') {
+
+      <div class="drivers-grid" appSuregeHighlight>
+
+        @for (driver of cabDrivers; track driver.id) {
+
+          <div class="driver-card" appSurgeHighlight>
+
+            <h3>{{ driver.name }}</h3>
+
+            <p>Cab Driver</p>
+
+            <p>Rating: {{ driver.rating }}</p>
+
+            @if(driver.isOnline) {
+
+              <p class="online">
+                Driver Online
+              </p>
+
+            } @else {
+
+              <p class="offline">
+                Driver Offline
+              </p>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+  }
+
+</section>

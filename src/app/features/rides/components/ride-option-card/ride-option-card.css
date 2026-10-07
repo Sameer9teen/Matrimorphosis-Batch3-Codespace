@@ -1,0 +1,41 @@
+.ride-card {
+
+  width: 240px;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ride-card img {
+
+  height: 120px;
+
+  object-fit: contain;
+}
+
+.ride-card h3 {
+
+  margin: 15px 0;
+}
+
+.ride-card button {
+
+  margin-top: 15px;
+
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  cursor: pointer;
+}
