@@ -1,0 +1,18 @@
+.analytics-container {
+  padding: 50px;
+}
+
+.analytics-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.analytics-card {
+  width: 250px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}

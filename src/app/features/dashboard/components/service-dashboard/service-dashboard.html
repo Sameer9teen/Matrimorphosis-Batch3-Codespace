@@ -51,5 +51,60 @@
     }
 
   </div>
+<section class="container py-5">
+  <h2 class="text-center mb-5">
+    Moviqo Service Dashboard
+  </h2>
 
+  <div class="row g-4">
+    @for (service of services; track service.title) {
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-body">
+            <h4 class="card-title">
+              {{ service.title }}
+            </h4>
+
+            <p class="card-text">
+              Total Rides: {{ service.rides }}
+            </p>
+
+            <p class="card-text">
+              Earnings: ₹{{ service.earnings }}
+            </p>
+
+            <!-- Existing Select Ride button preserved -->
+            <button
+              class="btn btn-dark me-2"
+              style="color: red;"
+            >
+              Select Ride
+            </button>
+
+            <!-- Added for template-level lazy loading -->
+            <button
+              class="btn btn-primary"
+              (click)="showAnalytics = true"
+            >
+              View Analytics
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Template-level lazy loading using @defer -->
+<section>
+  @if (showAnalytics) {
+    @defer (on timer(2s)) {
+      <app-ride-analytics />
+    } @placeholder {
+      <div class="text-center mt-5">
+        <h3>Preparing Analytics Dashboard...</h3>
+      </div>
+    }
+  }
+</section>
 </section>
