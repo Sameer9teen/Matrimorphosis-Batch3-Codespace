@@ -20,12 +20,20 @@
               Fare: ₹{{ ride.fare }}
             </p>
 
-            <button
+            <p>
+              Driver: {{ ride.driver }}
+            </p>
+
+            <p>
+              Vehicle: {{ ride.vehicle }}
+            </p>
+
+            <a
               class="btn btn-dark"
               [routerLink]="['/ride-history', ride.id]"
             >
               View Details
-            </button>
+            </a>
           </div>
         </div>
       </div>

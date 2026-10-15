@@ -1,0 +1,55 @@
+<section class="container py-5">
+  <h2 class="text-center mb-5">
+    Driver API Integration
+  </h2>
+
+  @if (!isDataLoaded) {
+    <h3 class="text-center">
+      Loading Drivers...
+    </h3>
+  } @else {
+    <div class="row g-4">
+      @for (driver of drivers; track driver.driverid) {
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h4>
+                {{ driver.driverid }}
+              </h4>
+
+              <h4>
+                {{ driver.name }}
+              </h4>
+
+              <p>
+                Vehicle:
+                {{ driver.vehicle }}
+              </p>
+
+              <p>
+                Rating:
+                ⭐ {{ driver.rating }}
+              </p>
+
+              <p>
+                Location:
+                {{ driver.location }}
+              </p>
+
+              <p>
+                Completed Rides:
+                {{ driver.ridesCompleted }}
+              </p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if (errorMessage) {
+    <h3 class="text-danger text-center">
+      {{ errorMessage }}
+    </h3>
+  }
+</section>

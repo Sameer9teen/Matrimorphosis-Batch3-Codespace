@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RideBasedService } from '../../services/ride-based-service';
 
 @Component({
   selector: 'app-ride-history-details-page',
@@ -12,6 +13,7 @@ export class RideHistoryDetailsPage implements OnInit {
   selectedRide: any;
   rideId = '';
 
+  // Original hardcoded ride data — preserved
   rides = [
     {
       id: '101',
@@ -39,14 +41,25 @@ export class RideHistoryDetailsPage implements OnInit {
     },
   ];
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private objService: RideBasedService,
+  ) {}
 
   ngOnInit() {
+    // Get the ride ID from the route
     this.rideId =
       this.activatedRoute.snapshot.paramMap.get('id') ?? '';
 
-    this.selectedRide = this.rides.find(
+    // Original hardcoded-data lookup — preserved
+    const hardcodedRide = this.rides.find(
       (ride) => ride.id === this.rideId,
     );
+
+    // Retrieve the ride from the service
+    const serviceRide = this.objService.getRideById(this.rideId);
+
+    // Prefer service data; use hardcoded data as a fallback
+    this.selectedRide = serviceRide ?? hardcodedRide;
   }
 }

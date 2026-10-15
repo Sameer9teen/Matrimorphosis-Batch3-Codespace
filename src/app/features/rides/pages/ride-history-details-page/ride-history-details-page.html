@@ -5,29 +5,44 @@
 
   @if (selectedRide) {
     <div class="card shadow-sm p-4 w-50 mx-auto">
-      <h3>
-        Ride #{{ selectedRide.id }}
-      </h3>
+      <div class="card-body">
+        <h3>
+          Ride #{{ selectedRide.id }}
+        </h3>
 
-      <p>
-        Pickup: {{ selectedRide.pickup }}
-      </p>
+        <p>
+          Pickup: {{ selectedRide.pickup }}
+        </p>
 
-      <p>
-        Destination: {{ selectedRide.destination }}
-      </p>
+        <p>
+          Destination: {{ selectedRide.destination }}
+        </p>
 
-      <p>
-        Driver: {{ selectedRide.driver }}
-      </p>
+        <p>
+          Driver: {{ selectedRide.driver }}
+        </p>
 
-      <p>
-        Vehicle: {{ selectedRide.vehicle }}
-      </p>
+        <p>
+          Vehicle: {{ selectedRide.vehicle }}
+        </p>
 
-      <p>
-        Fare: ₹{{ selectedRide.fare }}
-      </p>
+        <p>
+          Fare: ₹{{ selectedRide.fare }}
+        </p>
+
+        @if (selectedRide.Vehiclenumber) {
+          <p>
+            Vehicle Number: {{ selectedRide.Vehiclenumber }}
+          </p>
+        }
+
+        <a
+          class="btn btn-secondary mt-3"
+          routerLink="/ride-history"
+        >
+          Back to Ride History
+        </a>
+      </div>
     </div>
   } @else {
     <h3 class="text-danger text-center">

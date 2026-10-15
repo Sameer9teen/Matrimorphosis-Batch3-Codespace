@@ -1,0 +1,25 @@
+<section class="container py-5">
+  <h2 class="text-center mb-5">
+    Live Driver Tracker
+  </h2>
+
+  @if (liveDriverData) {
+    <div class="card shadow-lg p-4">
+      <h3>
+        Driver: {{ liveDriverData.driverName }}
+      </h3>
+
+      <p>
+        Current Location: {{ liveDriverData.currentLocation }}
+      </p>
+
+      <p>
+        Active Rides: {{ liveDriverData.activeRides }}
+      </p>
+
+      <p>
+        Status: {{ liveDriverData.status }}
+      </p>
+    </div>
+  }
+</section>
